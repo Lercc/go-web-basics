@@ -1,0 +1,25 @@
+{{ template "head" }}
+<title>Create User</title>
+<h1>create user page</h1>
+<hr>
+
+<form method="POST" action="/users/store">
+    <div class="mb-3">
+      <label for="nombre" class="form-label">Nombre</label>
+      <input type="text" class="form-control" name="nombre" placeholder="Ingrese su nombre" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="correo" class="form-label">Correo</label>
+      <input type="email" class="form-control" name="correo" placeholder="Ingrese su contraseña" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="contra" class="form-label">Contraseña</label>
+      <input type="password" class="form-control" name="contra" required>
+    </div>
+
+    <button type="submit" class="btn btn-success">Registrar</button>
+</form>
+
+{{ template "footer" }}

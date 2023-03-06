@@ -2,7 +2,6 @@ package main
 
 import (
 	"crud/router"
-	"crud/config"
 	"fmt"
 	"net/http"
 	"github.com/joho/godotenv"
@@ -20,9 +19,6 @@ func init() {
 func main() {
 	routes := router.MuxRouter()
 
-	config.Connection()
-
 	fmt.Println("Server on port:3000")
 	http.ListenAndServe(":3000", routes)
-
 }

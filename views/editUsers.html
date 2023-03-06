@@ -1,0 +1,27 @@
+{{ template "head" }}
+<title>Create User</title>
+<h1>edit user page</h1>
+<hr>
+
+<form method="POST" action="/users/update">
+    <input type="hidden" class="form-control" name="id" placeholder="Ingrese su ID" required value="{{.Id}}">
+
+    <div class="mb-3">
+      <label for="nombre" class="form-label">Nombre</label>
+      <input type="text" class="form-control" name="nombre" placeholder="Ingrese su nombre" required value="{{.Name}}">
+    </div>
+
+    <div class="mb-3">
+      <label for="correo" class="form-label">Correo</label>
+      <input type="email" class="form-control" name="correo" placeholder="Ingrese su contraseña" required value="{{.Email}}">
+    </div>
+
+    <!-- <div class="mb-3">
+      <label for="contra" class="form-label">Contraseña</label>
+      <input type="password" class="form-control" name="contra" required>
+    </div> -->
+
+    <button type="submit" class="btn btn-success">Actualizar</button>
+</form>
+
+{{ template "footer" }}

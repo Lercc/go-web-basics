@@ -1,0 +1,37 @@
+{{ template "head" }}
+<title>Create User</title>
+<h1>List of users page</h1>
+<hr>
+
+<a class="btn btn-primary" href="/users/create">Crear Usuario</a>
+
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">nombre</th>
+        <th scope="col">correo</th>
+        <th scope="col">estado</th>
+        <th scope="col">acciones</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      {{ range . }}
+      <tr>
+        <th scope="row">{{.Id}}</th>
+        <th>{{.Name}}</th>
+        <th>{{.Email}}</th>
+        <th>{{.Active}}</th>
+        <td>
+          <a class="btn btn-warning" href="/users/edit?id={{.Id}}">actualizar</a>
+          <a class="btn btn-danger" href="/users/delete?id={{.Id}}">eliminar</a>
+        </td>
+      </tr>
+      {{ end }}
+    </tbody>
+  </table>
+</div>
+
+{{ template "footer" }}
