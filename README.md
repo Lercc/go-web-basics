@@ -14,3 +14,7 @@
 
 ### encrypt passport
     user `go get golang.org/x/crypto/bcrypt` for package to encrypt passwords
+
+### COMPILACION
+    `go build -o main app`        for doker(l)
+    `go build -o main app.exe`    for wi
