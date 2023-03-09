@@ -8,6 +8,15 @@ import (
 	"net/http"
 )
 
+func Index(w http.ResponseWriter, r *http.Request) {
+	view, err := template.ParseFiles("views/principal.html", "views/layout.html")
+	
+	if err != nil {
+		log.Fatal("Index view error")
+	}
+	view.Execute(w, nil)
+}
+
 func IndexUsers(w http.ResponseWriter, r *http.Request) {
 	view, err := template.ParseFiles("views/listUsers.html", "views/layout.html")
 	

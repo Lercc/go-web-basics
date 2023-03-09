@@ -9,6 +9,8 @@ import (
 func MuxRouter() *mux.Router {
 	router := mux.NewRouter()
 
+	router.HandleFunc("/", handlers.Index)
+
 	userRouter := router.PathPrefix("/users").Subrouter()
 	userRouter.HandleFunc("", handlers.IndexUsers).Methods("GET")
 	userRouter.HandleFunc("/create", handlers.CreateUser).Methods("GET")
